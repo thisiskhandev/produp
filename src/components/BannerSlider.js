@@ -6,7 +6,7 @@ const BannerSlider = () => {
   return (
     <>
       <main id="theBanner" className="container mb-5">
-        <section className="row g-lg-0 gy-sm-4 gy-4">
+        <section className="row gy-sm-4 gy-4">
           <div className="col-lg-4 col-md-12 col-sm-12">
             <BannerOne idNo={1} />
           </div>
@@ -27,7 +27,7 @@ export default BannerSlider;
 const BannerOne = (props) => {
   const [banners, setBanners] = useState([]);
   const getBannerAds = async () => {
-    const response = await fetch("https://api.github.com/users");
+    const response = await fetch("https://jsonplaceholder.typicode.com/photos");
     // console.log(response);
     // const data = await response.json();
     // console.log(data[0].avatar_url);
@@ -45,15 +45,14 @@ const BannerOne = (props) => {
         data-bs-ride="carousel"
       >
         <div className="carousel-inner">
-          {banners.map((val, index) => {
-            console.log(index);
+          {banners.slice(0,9).map((val, index) => {
             return (
               <div
-                className={`carousel-item ${index == 0 ? "active" : ""}`}
+                className={`carousel-item ${index === 0 ? "active" : ""}`}
                 key={index}
               >
                 <img
-                  src={val.avatar_url}
+                  src={val.url}
                   className="d-block img-fluid"
                   alt={index + " Banner"}
                 />
