@@ -12,7 +12,7 @@ const NewProdupers = () => {
   return (
     <>
       <main className="vendors container mb-5">
-        <section className="row g-5">
+        <section className="row gy-4">
           <ProductCardInner />
           <ProductCardInner />
           <ProductCardInner />
@@ -29,32 +29,30 @@ const ProductCardInner = () => {
   return (
     <>
       <div className="col-lg-3 col-md-6 col-sm-12">
-        <Profile />
-        <Icons />
-        <section className="row">
-          <div className="col-12">
-            <ul className="p_series justify-content-evenly my-3">
-              <li>P1</li>
-              <li>P2</li>
-              <li>P3</li>
-              <li>P4</li>
-              <li>P5</li>
-              <li>P6</li>
-            </ul>
-          </div>
-        </section>
-        <section className="row">
-          <div className="col-12 pb-3">
-            <NewVendProductList />
-          </div>
-        </section>
-        <section className="row">
-          <div className="col-12 p-0">
-            <NavLink className="btn btn_show_more text-black" to="/">
-              Ver Almacen
-            </NavLink>
-          </div>
-        </section>
+        <div className="card">
+          <Profile />
+          <Icons />
+          <section className="row">
+            <div className="col-12">
+              <ul className="p_series justify-content-evenly my-3">
+                <li>P1</li>
+                <li>P2</li>
+                <li>P3</li>
+                <li>P4</li>
+                <li>P5</li>
+                <li>P6</li>
+              </ul>
+            </div>
+          </section>
+          <section className="row">
+            <div className="col-12 pb-3">
+              <NewVendProductList />
+            </div>
+          </section>
+          <NavLink className="btn btn_show_more text-black" to="/">
+            Ver Almacen
+          </NavLink>
+        </div>
       </div>
     </>
   );
@@ -63,17 +61,19 @@ const ProductCardInner = () => {
 const Profile = () => {
   return (
     <>
-      <section className="row profile user_profile align-items-center">
-        <div className="col-3">
-          <img className="vendor_logo" src={Logo} alt="Vendor Logo" />
-        </div>
-        <div className="col-9 data ps-4">
-          <h4>lbPRODUP SA DE CV</h4>
-          <h5>Proveeder</h5>
-          <h6>5 anos</h6>
-          <NavLink className="profile_link" to="/">
-            View Profile
-          </NavLink>
+      <section className="user_profile profile d-flex">
+        <div className="row align-items-center ps-2">
+          <div className="col-3">
+            <img className="vendor_logo" src={Logo} alt="Vendor Logo" />
+          </div>
+          <div className="col-9 data ps-4">
+            <h4>lbPRODUP SA DE CV</h4>
+            <h5>Proveeder</h5>
+            <h6>5 anos</h6>
+            <NavLink className="profile_link" to="/">
+              View Profile
+            </NavLink>
+          </div>
         </div>
       </section>
     </>

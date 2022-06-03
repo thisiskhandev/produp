@@ -28,16 +28,36 @@ $transition: 0.3s all;
   border-radius: 6px;
   padding: 6px;
 }
-::placeholder {
-  color: #000 !important;
-}
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+::placeholder {
+  color: #000 !important;
+}
 
+::selection {
+  background-color: $color-primary-h;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ddd;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $color-primary;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $color-secondary;
+}
 html body {
   font-family: $font-primary;
   overflow-x: hidden;
@@ -57,6 +77,13 @@ a {
   text-decoration: none !important;
   font-family: $font-primary;
   color: $color-secondary;
+  &.links {
+    color: $color-primary;
+    font-size: 14px;
+    &:hover {
+      color: $color-primary-h;
+    }
+  }
 }
 
 h1 {
@@ -369,6 +396,9 @@ footer {
 }
 
 .vendors {
+  .card {
+    border: none;
+  }
   .profile.user_profile {
     border-radius: 0 0 10px 10px;
   }
@@ -610,6 +640,7 @@ footer {
     font-weight: 500;
   }
 }
+
 .product_slides {
   .product_items_slides {
     height: 80px;
@@ -620,12 +651,12 @@ footer {
   }
   button.owl-prev {
     position: absolute;
-    left: -10px;
+    left: 0;
     top: 25px;
   }
   button.owl-next {
     position: absolute;
-    right: -10px;
+    right: 0;
     top: 25px;
   }
 }
@@ -650,6 +681,19 @@ footer {
   svg {
     color: $color-dark-3;
     font-size: 30px;
+  }
+}
+
+.card_products {
+  .price {
+    font-size: 40px;
+    font-weight: 500;
+  }
+  .product_details {
+    padding-left: 35px;
+  }
+  .card {
+    height: 93%;
   }
 }
 // --------------- MEDIA QURIES

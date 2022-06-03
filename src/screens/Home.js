@@ -2,6 +2,7 @@ import BannerSlider from "../components/BannerSlider";
 import SearchBar from "../components/SearchBar";
 import Vendors from "../components/./vendor/Vendors";
 import NewProdupers from "../components/NewProdupers";
+import ProductCarousel from "../components/vendor/ProductCarousel";
 const Home = () => {
   return (
     <>
@@ -11,7 +12,9 @@ const Home = () => {
       <Vendors />
       <Vendors />
       <h2 className="title_top_product text-center mb-3">Nuevos Produpers</h2>
-      <NewProdupers/>
+      <NewProdupers />
+      <h2 className="title_top_product text-center mb-3">Saldos y Remates</h2>
+      <ProductCarousel />
     </>
   );
 };

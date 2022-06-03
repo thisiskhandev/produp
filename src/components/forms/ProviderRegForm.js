@@ -8,15 +8,17 @@ const ProviderRegForm = () => {
           className="container px-md-5 px-1 py-5 the_form"
           style={{ maxWidth: "650px" }}
         >
-          <h3 className="text-center">IHAGAMOS NEGOCIO! </h3>
-          <h6>Cornpleta tus datos</h6>
+          <h3 className="text-center text-uppercase pb-3">IHAGAMOS NEGOCIO! </h3>
           <section className="row">
             <div className="col-lg-6 col-md-6 col-sm-12">
+              <h6>Cornpleta tus datos</h6>
               <h6>Cuenta PRODUPER</h6>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12">
               <h6 className="text-md-end text-start c_primary">
-                <NavLink to="/user-form">Crear Cuenta personal </NavLink>
+                <NavLink className="d-block" to="/user-form">
+                  Crear Cuenta personal{" "}
+                </NavLink>
               </h6>
             </div>
           </section>

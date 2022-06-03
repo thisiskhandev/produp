@@ -54,7 +54,6 @@ const TopProducts = (topProductProps) => {
                   <p className="product_desc">{val.title}</p>
                 </div>
               </div>
-              {/* <h1>{topProductProps.sliceT}</h1> */}
             </div>
           );
         })}

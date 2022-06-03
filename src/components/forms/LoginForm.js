@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-const UserRegForm = () => {
+const LoginForm = () => {
   return (
     <>
       <main className="py-5" style={{ background: "#333" }}>
@@ -8,15 +8,21 @@ const UserRegForm = () => {
           className="container px-md-5 px-1 py-5 the_form"
           style={{ maxWidth: "650px" }}
         >
-          <h3 className="text-center">BIENVENIDO</h3>
-          <h6>Cornpleta tus datos</h6>
+          <h3 className="text-center text-uppercase pb-3">Inicio de sesión</h3>
+
           <section className="row">
             <div className="col-lg-6 col-md-6 col-sm-12">
+              <h6>Cornpleta tus datos</h6>
               <h6>Cuenta personal</h6>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12">
               <h6 className="text-md-end text-start c_primary">
-                <NavLink to="/provider-form">Crear cuenta PRODUPER</NavLink>
+                <NavLink className="d-block" to="/user-form">
+                  Crear Cuenta personal
+                </NavLink>
+                <NavLink className="d-block" to="/provider-form">
+                  Crear cuenta PRODUPER
+                </NavLink>
               </h6>
             </div>
           </section>
@@ -71,22 +77,7 @@ const UserRegForm = () => {
                   </small>
                 </p>
                 <button type="submit" className="btn btn-primary">
-                  Enviar codigo de verificaciOn
-                </button>
-                <p className="text-center py-3">
-                  Lo enviamos un codigo por correo para confirmar que to
-                  pertenece. Si no lo encuentras revisa to carpeta de correo no
-                  deseado.
-                </p>
-                <h5>Ingresa el codigo</h5>
-                <div className="text-center mt-4">
-                  <input type="number" className="otp" maxLength={1} size={1} />
-                  <input type="number" className="otp" maxLength={1} size={1} />
-                  <input type="number" className="otp" maxLength={1} size={1} />
-                  <input type="number" className="otp" maxLength={1} size={1} />
-                </div>
-                <button type="submit" className="btn btn-primary mt-4">
-                  Confimar
+                  Inicio de sesión
                 </button>
               </form>
             </div>
@@ -97,4 +88,4 @@ const UserRegForm = () => {
   );
 };
 
-export default UserRegForm;
+export default LoginForm;
