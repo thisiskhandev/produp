@@ -5,9 +5,19 @@ import { FaRegComments } from "react-icons/fa";
 import { RiLock2Fill, RiLockUnlockFill } from "react-icons/ri";
 import { FaCommentDollar } from "react-icons/fa";
 import { AiFillStar, AiOutlineFieldTime } from "react-icons/ai";
+import { TiArrowSortedDown } from "react-icons/ti";
 import TopProducts from "./TopProducts";
 import LocksArr from "./LocksArr";
+import { useState } from "react";
 const Vendors = () => {
+  const [showTopPro, setShowTopPro] = useState("d-none");
+  const funShowProd = () => {
+    showTopPro === "d-none"
+      ? setShowTopPro("d-block")
+      : setShowTopPro("d-none");
+  };
+  // console.log(showTopPro);
+
   return (
     <>
       <main className="vendors container mb-5">
@@ -26,7 +36,17 @@ const Vendors = () => {
             </section>
           </div>
           <div className="col-lg-6 col-md-12 col-sm-12 bg-white">
-            <TopProducts />
+            <TopProducts cols="col-md-4" start="0" limit="3" />
+          </div>
+        </section>
+        <section className={"row mt-0 more_top_products bg-white " + showTopPro}>
+          <TopProducts cols="col-lg-2 col-md-4" start="3" limit="-1" />
+        </section>
+        <section className="row">
+          <div className="col-12 p-0">
+            <button className="btn btn_show_more" onClick={funShowProd}>
+              Ver Almacen <TiArrowSortedDown />
+            </button>
           </div>
         </section>
       </main>
@@ -60,19 +80,19 @@ const Icons = () => {
   return (
     <>
       <section className="verification row mt-3">
-        <div className="col-md-4 col-sm-12">
+        <div className="col-4">
           <div className="verification_icons text-center">
             <h5>Verification</h5>
             <BsShieldFillCheck />
           </div>
         </div>
-        <div className="col-md-4 col-sm-12">
+        <div className="col-4">
           <div className="verification_icons text-center">
             <h5>Garantia</h5>
             <BsShieldFillCheck />
           </div>
         </div>
-        <div className="col-md-4 col-sm-12">
+        <div className="col-4">
           <div className="verification_icons text-center">
             <h5>Factura</h5>
             <BsShieldFillCheck />

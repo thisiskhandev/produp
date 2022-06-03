@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { RiLockUnlockFill } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
-const TopProducts = () => {
+const TopProducts = (topProductProps) => {
   var [topProducts, setTopProducts] = useState([]);
   const getProducts = async () => {
     let response = await fetch("https://fakestoreapi.com/products");
@@ -10,17 +10,21 @@ const TopProducts = () => {
     // console.log(data);
     setTopProducts(await response.json());
   };
-
   useEffect(() => {
     getProducts();
   }, []);
 
+  let limit =
+    topProductProps.limit === -1 ? topProducts.length : topProductProps.limit;
   return (
     <>
       <section className="row">
-        {topProducts.slice(0, 3).map((val, index) => {
+        {topProducts.slice(topProductProps.start, limit).map((val, index) => {
           return (
-            <div className="top_products col-md-4 col-sm-12 py-2" key={val.id}>
+            <div
+              className={"top_products col-sm-12 py-2 " + topProductProps.cols}
+              key={val.id}
+            >
               <span className="badge text-white p-2 sale">Saldo</span>
               <NavLink to="/" className="my-4 d-block">
                 <img
@@ -50,6 +54,7 @@ const TopProducts = () => {
                   <p className="product_desc">{val.title}</p>
                 </div>
               </div>
+              {/* <h1>{topProductProps.sliceT}</h1> */}
             </div>
           );
         })}

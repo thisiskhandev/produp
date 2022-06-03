@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Jeffrey Reeves",
+    "gender": "Male"
+  },
+  {
+    "id": 2,
+    "name": "Harwell Birtles",
+    "gender": "Male"
+  },
+  {
+    "id": 3,
+    "name": "Geno Goosnell",
+    "gender": "Male"
+  },
+  {
+    "id": 4,
+    "name": "Starlene Greschke",
+    "gender": "Female"
+  },
+  {
+    "id": 5,
+    "name": "Adrienne Badger",
+    "gender": "Female"
+  },
+  {
+    "id": 6,
+    "name": "Dennis Shearsby",
+    "gender": "Male"
+  },
+  {
+    "id": 7,
+    "name": "Kalie Hairesnape",
+    "gender": "Female"
+  },
+  {
+    "id": 8,
+    "name": "Galvan Doughton",
+    "gender": "Male"
+  },
+  {
+    "id": 9,
+    "name": "Lesya Duckworth",
+    "gender": "Female"
+  },
+  {
+    "id": 10,
+    "name": "Hastings Scarbarrow",
+    "gender": "Male"
+  }
+]
