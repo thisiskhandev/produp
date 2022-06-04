@@ -9,6 +9,7 @@ import ProviderRegForm from "./components/forms/ProviderRegForm";
 import { Routes, Route } from "react-router-dom";
 import Home from "./screens/Home";
 import LoginForm from "./components/forms/LoginForm";
+import ListOfProductsPage from "./screens/ListOfProductsPage";
 const App = () => {
   return (
     <React.Fragment>
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/user-form" element={<UserRegForm />} />
         <Route path="/provider-form" element={<ProviderRegForm />} />
+        <Route path="/product-list" element={<ListOfProductsPage />} />
       </Routes>
       <Footer />
     </React.Fragment>

@@ -2,21 +2,31 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { RiLockUnlockFill } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
-const ProductList = () => {
+import loading from "../../assets/loading.gif";
+const ProductList = (props) => {
   const [products, setproducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     const getProductsList = async () => {
+      setIsLoading(true);
       let res = await axios.get("https://fakestoreapi.com/products/");
       // console.log(res.data[5]);
       setproducts(res.data);
+      setIsLoading(false);
     };
     getProductsList();
   }, []);
+  if (isLoading)
+    return (
+      <div className="text-center py-5">
+        <img src={loading} alt="loading" width="130" />
+      </div>
+    );
   return (
     <>
-      <main className="container">
-        <section className="row card_products mb-5">
-          {products.slice(0, 4).map((val) => {
+      <main className="container pb-5">
+        <section className="row card_products">
+          {products.slice(props.startList, props.endList).map((val) => {
             return (
               <div
                 className="top_products col-md-3 col-sm-12 py-2"

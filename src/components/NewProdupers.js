@@ -3,7 +3,6 @@ import axios from "axios";
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/fav.png";
 import { BsShieldFillCheck } from "react-icons/bs";
-// import { MdArrowLeft, MdArrowRight } from "react-icons/md";
 import ReactOwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
