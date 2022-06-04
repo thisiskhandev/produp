@@ -10,6 +10,7 @@ $color-slate: #222f3e;
 $color-light: #f2f3f8;
 $color-sale-orange: #ff7e00;
 $color-offer-purple: #7800ff;
+$color-pinky: #ff93c6;
 $color-red: #ff0000;
 $color-slight-gray: #eaebf0;
 $font-primary: "Poppins", sans-serif;
@@ -492,36 +493,42 @@ footer {
 
 .vendor_col {
   background-color: $color-slight-gray;
-  .vendor_contact {
-    background-color: $color-dark-3;
-    border-radius: 0 0 10px 0;
-    a.vendor_chat {
-      display: block;
-      color: #fff;
-      background-color: $color-primary-h;
-      width: 95%;
-      border-radius: 8px;
-      padding: 23.5px 0;
-      margin: auto;
-      svg {
-        font-size: 50px;
-      }
-      ul {
-        margin: 0;
-        padding: 0;
-      }
-      > ul {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-      }
-      h5 {
-        margin: 0;
-        font-size: 19px;
-        font-weight: 600;
-      }
+}
+
+.vendor_contact {
+  background-color: $color-dark-3;
+  border-radius: 0 0 10px 0;
+  a.vendor_chat {
+    display: block;
+    color: #fff;
+    background-color: $color-primary-h;
+    width: 95%;
+    border-radius: 8px;
+    padding: 23.5px 0;
+    margin: auto;
+    svg {
+      font-size: 50px;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    > ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    h5 {
+      margin: 0;
+      font-size: 19px;
+      font-weight: 600;
     }
   }
+}
+
+.provider_dash .vendor_contact {
+  background: none;
+  border-radius: 0;
 }
 
 .reputation {
@@ -732,6 +739,22 @@ footer {
   &:hover {
     color: $color-primary;
   }
+}
+
+.avatars {
+  button.owl-prev {
+    position: absolute;
+    left: 0;
+    top: 40%;
+  }
+  button.owl-next {
+    position: absolute;
+    right: 0;
+    top: 40%;
+  }
+}
+.btn.btn_provider {
+  background-color: $color-pinky;
 }
 // --------------- MEDIA QURIES
 @media only screen and (min-width: 991px) {

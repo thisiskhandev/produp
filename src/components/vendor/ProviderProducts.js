@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { RiLockUnlockFill } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
 import loading from "../../assets/loading-infinite.gif";
-const ProductList = (props) => {
+const ProviderProducts = (props) => {
   const [products, setproducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
@@ -29,7 +29,7 @@ const ProductList = (props) => {
           {products.slice(props.startList, props.endList).map((val) => {
             return (
               <div
-                className="top_products col-lg-3 col-md-4 col-sm-12 py-2"
+                className="top_products col-md-4 col-sm-12 py-2"
                 key={val.id}
               >
                 <div className="card py-3 px-2 border-0 rounded-top-3 rounded-start-3">
@@ -49,7 +49,7 @@ const ProductList = (props) => {
                         <li>P1</li>
                         <li>P2</li>
                         <li>P3</li>
-                        <li style={{ backgroundColor: "#ddd" }}>P4</li>
+                        <li>P4</li>
                         <li style={{ backgroundColor: "#ddd" }}>P5</li>
                         <li style={{ backgroundColor: "#ddd" }}>P6</li>
                       </ul>
@@ -78,7 +78,7 @@ const ProductList = (props) => {
                     </div>
                   </section>
                 </div>
-                <NavLink className="btn btn_show_more text-black" to="/">
+                <NavLink className="btn btn_show_more btn_provider text-black" to="/">
                   Ver Producto
                 </NavLink>
               </div>
@@ -90,4 +90,4 @@ const ProductList = (props) => {
   );
 };
 
-export default ProductList;
+export default ProviderProducts;

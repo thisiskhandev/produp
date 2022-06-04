@@ -1,14 +1,13 @@
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/fav.png";
-import { BsShieldFillCheck, BsInboxes } from "react-icons/bs";
-import { FaRegComments } from "react-icons/fa";
+import { BsShieldFillCheck } from "react-icons/bs";
 import { RiLock2Fill, RiLockUnlockFill } from "react-icons/ri";
-import { FaCommentDollar } from "react-icons/fa";
-import { AiFillStar, AiOutlineFieldTime } from "react-icons/ai";
 import { TiArrowSortedDown } from "react-icons/ti";
 import TopProducts from "./TopProducts";
 import LocksArr from "./LocksArr";
 import { useState } from "react";
+import VendorAccords from "./VendorAccords";
+import VendorContact from "./VendorContact";
 const Vendors = () => {
   const [showTopPro, setShowTopPro] = useState("d-none");
   const funShowProd = () => {
@@ -31,7 +30,7 @@ const Vendors = () => {
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12 vendor_col">
                 <VendorContact />
-                <Accords />
+                <VendorAccords />
               </div>
             </section>
           </div>
@@ -39,7 +38,9 @@ const Vendors = () => {
             <TopProducts cols="col-md-4" start="0" limit="3" />
           </div>
         </section>
-        <section className={"row mt-0 more_top_products bg-white " + showTopPro}>
+        <section
+          className={"row mt-0 more_top_products bg-white " + showTopPro}
+        >
           <TopProducts cols="col-lg-2 col-md-4" start="3" limit="-1" />
         </section>
         <section className="row">
@@ -130,125 +131,6 @@ const Locks = () => {
             </div>
           );
         })}
-      </section>
-    </>
-  );
-};
-
-const VendorContact = () => {
-  return (
-    <>
-      <section className="row vendor_contact align-items-center">
-        <div className="col-12">
-          <NavLink className="vendor_chat" to="/">
-            <ul>
-              <li>
-                <FaCommentDollar />
-              </li>
-              <ul>
-                <li>
-                  <h5>Cantacta el Produper</h5>
-                </li>
-                <li>Hagamos Negocia</li>
-              </ul>
-            </ul>
-          </NavLink>
-        </div>
-      </section>
-      <section className="row reputation">
-        <div className="col-11 mx-auto">
-          <ul>
-            <li>
-              <AiFillStar />
-              Reputaoldm
-            </li>
-            <li>
-              <h4>85%</h4>
-            </li>
-          </ul>
-        </div>
-      </section>
-    </>
-  );
-};
-
-const Accords = () => {
-  return (
-    <>
-      <section className="row vendor_faq">
-        <div className="col-11 mx-auto">
-          <div className="accordion" id="vendor_accords">
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingOne">
-                <button
-                  className="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
-                  <FaRegComments />
-                  Opiniones
-                </button>
-              </h2>
-              <div
-                id="collapseOne"
-                className="accordion-collapse collapse show"
-                aria-labelledby="headingOne"
-                data-bs-parent="#vendor_accords"
-              >
-                <div className="accordion-body">1</div>
-              </div>
-            </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingTwo">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
-                  <AiOutlineFieldTime />
-                  Velocidad
-                </button>
-              </h2>
-              <div
-                id="collapseTwo"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingTwo"
-                data-bs-parent="#vendor_accords"
-              >
-                <div className="accordion-body">2</div>
-              </div>
-            </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header" id="headingThree">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
-                  <BsInboxes />
-                  Existencias
-                </button>
-              </h2>
-              <div
-                id="collapseThree"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingThree"
-                data-bs-parent="#vendor_accords"
-              >
-                <div className="accordion-body">3</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
     </>
   );
