@@ -19,7 +19,7 @@ const ProductList = (props) => {
   if (isLoading)
     return (
       <div className="text-center py-5">
-        <img src={loading} alt="loading" width="130" />
+        <img src={loading} alt="loading" style={{width: 130, margin: "auto"}} />
       </div>
     );
   return (
