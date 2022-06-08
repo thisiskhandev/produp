@@ -3,6 +3,8 @@ import SearchBar from "../components/SearchBar";
 import ProduperTopSlider from "../components/ProduperTopSlider";
 import BannerShot from "../assets/provider-banner.jpg";
 import ProviderDash from "../components/vendor/ProviderDash";
+import LocationOfPage from "../components/LocationOfPage";
+
 const ProviderPage = () => {
   return (
     <>

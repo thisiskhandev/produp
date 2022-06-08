@@ -1,6 +1,7 @@
 import { FaRegComments } from "react-icons/fa";
 import { AiOutlineFieldTime } from "react-icons/ai";
 import { BsInboxes } from "react-icons/bs";
+import { NavLink } from "react-router-dom";
 
 const VendorAccords = () => {
   return (
@@ -77,6 +78,9 @@ const VendorAccords = () => {
                 <div className="accordion-body">3</div>
               </div>
             </div>
+            <NavLink to="/" className="accord_btn">
+              Pregunta
+            </NavLink>
           </div>
         </div>
       </section>

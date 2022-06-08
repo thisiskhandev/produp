@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const BannerSlider = () => {
   return (
     <>
-      <main id="theBanner" className="container mb-5">
+      <main id="theBanner" className="container mb-5 banners">
         <section className="row gy-sm-4 gy-4">
           <div className="col-lg-4 col-md-12 col-sm-12">
             <BannerOne idNo={1} />

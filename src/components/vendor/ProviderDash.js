@@ -1,5 +1,9 @@
 import VendorAccords from "./VendorAccords";
 import VendorContact from "./VendorContact";
+import Locks from "./Locks";
+import Categories from "./Categories";
+import BannerSlider from "../BannerSlider";
+
 const ProviderDash = () => {
   return (
     <>
@@ -11,6 +15,9 @@ const ProviderDash = () => {
           <div className="col-12">
             <VendorContact />
             <VendorAccords />
+            <Locks cols="col-12 text-start" />
+            <Categories />
+            <BannerSlider className="okaybro"/>
           </div>
         </section>
       </main>

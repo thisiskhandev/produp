@@ -29,7 +29,7 @@ const ProductList = (props) => {
           {products.slice(props.startList, props.endList).map((val) => {
             return (
               <div
-                className="top_products col-lg-3 col-md-4 col-sm-12 py-2"
+                className="top_products col-lg-3 col-md-6 col-sm-12 py-2"
                 key={val.id}
               >
                 <div className="card py-3 px-2 border-0 rounded-top-3 rounded-start-3">

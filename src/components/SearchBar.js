@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/produp-logo.png";
 import { AiOutlineSearch } from "react-icons/ai";
+import axios from "axios";
 
 const SearchBar = () => {
+  const [searching, setSearching] = useState("");
+  const [lists, setLists] = useState([]);
+  const handleChange = (e) => {
+    setSearching(e.target.value.toLowerCase());
+  };
+
+  useEffect(() => {
+    const getListItems = async () => {
+      let res = await axios.get("https://fakestoreapi.com/products/");
+      // console.log(res.data[0].title);
+      setLists(res.data);
+    };
+    getListItems();
+  }, []);
   return (
     <>
       <main className="container" id="searchBar">
@@ -23,7 +38,19 @@ const SearchBar = () => {
                 type="search"
                 placeholder="Busca to Produpto o Produper"
                 aria-label="Search"
+                value={searching}
+                onChange={handleChange}
+                list="suggestions"
               />
+              <datalist id="suggestions">
+                {lists.slice(0, -10).map((val) => {
+                  return (
+                    <option key={val.id} value={val.title}>
+                      {val.title}
+                    </option>
+                  );
+                })}
+              </datalist>
               <button className="btn" type="submit">
                 <AiOutlineSearch />
               </button>

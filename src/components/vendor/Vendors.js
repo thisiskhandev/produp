@@ -1,13 +1,12 @@
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/fav.png";
 import { BsShieldFillCheck } from "react-icons/bs";
-import { RiLock2Fill, RiLockUnlockFill } from "react-icons/ri";
 import { TiArrowSortedDown } from "react-icons/ti";
 import TopProducts from "./TopProducts";
-import LocksArr from "./LocksArr";
 import { useState } from "react";
 import VendorAccords from "./VendorAccords";
 import VendorContact from "./VendorContact";
+import Locks from "./Locks";
 const Vendors = () => {
   const [showTopPro, setShowTopPro] = useState("d-none");
   const funShowProd = () => {
@@ -26,7 +25,7 @@ const Vendors = () => {
               <div className="col-lg-6 col-md-6 col-sm-12 bg-white">
                 <Profile />
                 <Icons />
-                <Locks />
+                <Locks cols="col-md-6 col-sm-12"/>
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12 vendor_col">
                 <VendorContact />
@@ -104,34 +103,4 @@ const Icons = () => {
   );
 };
 
-const Locks = () => {
-  return (
-    <>
-      <section className="profile_locks row mt-3 align-items-center">
-        {LocksArr.map((val) => {
-          return (
-            <div className="col-md-6 col-sm-12" key={val.id}>
-              <div>
-                <ul>
-                  <li>
-                    {val.lockType === "locked" ? (
-                      <RiLock2Fill />
-                    ) : (
-                      <RiLockUnlockFill />
-                    )}
-                  </li>
-                  <li>
-                    <h2>{val.pData}</h2>
-                  </li>
-                  <li>
-                    <p>{val.pzaData}</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          );
-        })}
-      </section>
-    </>
-  );
-};
+

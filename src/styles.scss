@@ -64,14 +64,10 @@ html body {
   overflow-x: hidden;
   background-color: $color-light;
   color: $color-secondary;
-  div#root {
+  #root {
     overflow-x: hidden;
     color: $color-secondary;
   }
-}
-
-main {
-  overflow-x: hidden;
 }
 
 a {
@@ -118,6 +114,17 @@ input[type="number"] {
 
 svg.icons {
   fill: $color-primary;
+}
+
+ul.general {
+  margin: 0;
+  padding: 0;
+  > li {
+    font-size: 15px;
+    a {
+      color: $color-secondary;
+    }
+  }
 }
 
 nav#navbar {
@@ -472,12 +479,13 @@ footer {
 
       > h2 {
         font-weight: 700;
-        font-size: 35px;
+        font-size: 30px;
         margin: 0;
       }
       > p {
         margin: 0;
         font-size: 13px;
+        line-height: 1.2;
       }
       > svg {
         font-size: 40px;
@@ -562,6 +570,17 @@ footer {
 
 .vendor_faq {
   overflow-y: hidden;
+  .accord_btn {
+    width: 100%;
+    display: block;
+    background-color: $color-secondary;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 3.5;
+    margin: 20px 0;
+  }
   .accordion-item {
     background-color: transparent;
     border: none;
@@ -754,6 +773,27 @@ footer {
 
 .btn.btn_provider {
   background-color: $color-pinky;
+}
+
+.page-provider {
+  main#theBanner {
+    padding: 0;
+    margin-top: 25px;
+    > section.row > {
+      margin: 0;
+      padding: 0;
+      div {
+        &:not(div:nth-child(2)) {
+          display: none;
+        }
+        &:nth-child(2) {
+          display: block;
+          width: 100%;
+          padding: 0;
+        }
+      }
+    }
+  }
 }
 // --------------- MEDIA QURIES
 @media only screen and (min-width: 991px) {
